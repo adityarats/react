@@ -3,7 +3,7 @@ import './App.css';
 function App() {
   return (
     <>
-  <header>
+  <header>  
   <nav>
         <img src="/images/Logo.svg" alt="logo" />
         <ul>
@@ -32,7 +32,9 @@ function App() {
   <h1>Welcome to Little Lemon</h1>
   <p>Your favorite restaurant for delicious meals.</p>
 </main>
-<footer></footer>
+<footer>
+  Contact
+</footer>
 </>
   );
 }
