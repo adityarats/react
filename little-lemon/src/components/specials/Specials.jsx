@@ -12,9 +12,9 @@ const Specials = () => {
         </div>
         <div className={style.specialItems}>
           <SpecialsCard
-            image="/images/greekSalad.svg"
+            image="/images/greekSalad.jpg"
             title="Greek Salad"
-            price="£10"
+            price="$15"
             description="The famouse Greek salad of crispy lettuce,
                          peppers, olives and our Chicago style feta cheese, 
                          garnished with crunchy garlic and rosemary croutons. "
@@ -22,14 +22,14 @@ const Specials = () => {
           <SpecialsCard
             image="/images/bruchetta.svg"
             title="Bruchetta"
-            price="£11.50"
+            price="$18"
             description="Our Bruchetta is made from grilled bread that has been smeared with garlic and 
                         seasoned with salt and olive."
           />
           <SpecialsCard
-            image="/images/lemonDessert.svg"
+            image="/images/lemonDessert.jpg"
             title="Lemon Dessert"
-            price="£8"
+            price="$10.50"
             description="This comes straight from Grandma's recipe book, every last ingrediant has been sourced and 
                         is as authentic as can be imagined."
           />

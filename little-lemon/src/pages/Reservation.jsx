@@ -1,9 +1,12 @@
 import { React, useState, useEffect, useReducer, useCallback } from "react";
 import Footer from "../components/footer/Footer";
+import Hero from "../components/reservation/hero/Hero";
 import BookingForm from "../components/reservation/bookingForm/BookingForm";
+import fakeAPI from "../utility/fakeAPI";
 import style from "../components/reservation/Reservation.module.css";
-
-
+import ConfirmedBooking from "../components/reservation/confirmation/Confirmation";
+import Gallery from "../components/Gallery/Gallery";
+import availableTimesReducer from "../components/reservation/reducer/availableTimesReducer";
 
 
 
@@ -25,6 +28,7 @@ const Reservation = () => {
     })
   }
 
+  const [availableTimes, dispatchAvailableTimes] = useReducer(availableTimesReducer, initialAvailableTimesState);
   const [reservation, setReservation] = useState({
     date: "",
     time: "",
@@ -33,6 +37,24 @@ const Reservation = () => {
     confirmed: false,
   });
 
+  const updateTimes = useCallback(()=>{
+    fakeAPI.fetchAPI(date).then((data) =>
+    dispatchAvailableTimes({type: 'setAvailableTimes', payload: {date: date, availableTimes: data}})
+  );
+  },[date]);
+
+
+  const submitForm = () => {
+    if (reservation.date && reservation.time && reservation.guests) {
+      const response = fakeAPI.submitAPI(reservation);
+      if (response) {
+        setReservation((current) => ({ ...current, confirmed: true }));
+      }
+      console.log("Booking successful");
+    } else {
+      console.log("Booking failed");
+    }
+  };
 
   useEffect(() => {
     if (date && date !== reservation.date) {
@@ -47,6 +69,7 @@ const Reservation = () => {
   return (
     <div classname={style.page_container}>
       <main className={style.content_wrap}>
+        <Hero setDate={setDate} />
         {!reservation.confirmed && (
           <BookingForm
             availableTimes={availableTimes}
@@ -55,6 +78,8 @@ const Reservation = () => {
             createBooking={submitForm}
           />
         )}
+        {reservation.confirmed && <ConfirmedBooking reservation={reservation} />}
+      <Gallery/>
       </main>
       <Footer />
     </div>

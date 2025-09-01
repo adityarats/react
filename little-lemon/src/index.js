@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   <meta name="og:title" content="Little Lemon - Your favorite restaurant for delicious meals." />
   <meta name="og:description" content="Little Lemon is a cozy restaurant offering a variety of delicious meals made from fresh ingredients." />
   <meta name="og:image" content="/images/Logo.svg" />
+  <script src="https://raw.githubusercontent.com/courseraap/capstone/main/api.js"></script>
 </>
 root.render(
   <React.StrictMode>

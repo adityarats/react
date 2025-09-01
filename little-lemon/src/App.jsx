@@ -6,8 +6,6 @@ import "@fontsource/karla";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Reservation from "./pages/Reservation";
 
-import './App.css';
-
 function App() {
   return (
     <div className="app_content">
