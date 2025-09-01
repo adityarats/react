@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import "@fontsource/markazi-text";
 import "@fontsource/karla";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Reservation from "./pages/Reservation";
 
 import './App.css';
 
@@ -14,7 +15,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home/>} />
-          {/* <Route path="/reservations" element={<Reservation/>} /> */}
+          <Route path="/reservations" element={<Reservation/>} />
         </Routes>
       </Router>
     </div>

@@ -1,10 +1,13 @@
 import React from "react";
+import Hero from "./hero/Hero";
+import Specials from "../specials/Specials";
 
 const Main = () => {
   return (
     <>
     <main>
-        main
+      <Hero />
+      <Specials />
     </main>
     </>
   );
