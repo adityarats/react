@@ -1,41 +1,23 @@
+import "./App.css";
+import Nav from "./components/nav/Nav";
+import Home from "./pages/Home";
+import "@fontsource/markazi-text";
+import "@fontsource/karla";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import './App.css';
 
 function App() {
   return (
-    <>
-  <header>  
-  <nav>
-        <img src="/images/Logo.svg" alt="logo" />
-        <ul>
-          <li>
-          <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Menu</a>
-          </li>
-          <li>
-            <a href="#">Reservations</a>
-          </li>
-          <li>
-            <a href="#">Order Online</a>
-          </li>
-          <li>
-            <a href="#">Login</a>
-          </li>
-        </ul>
-      </nav>
-      </header>
-<main>
-  <h1>Welcome to Little Lemon</h1>
-  <p>Your favorite restaurant for delicious meals.</p>
-</main>
-<footer>
-  Contact
-</footer>
-</>
+    <div className="app_content">
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          {/* <Route path="/reservations" element={<Reservation/>} /> */}
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
